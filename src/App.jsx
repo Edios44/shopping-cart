@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { createContext } from "react";
 
 export const ProductsContext = createContext([]);
+export const CartContext = createContext([]);
 
 function useFetchAllProducts() {
   const [products, setProducts] = useState([]);
@@ -16,11 +17,15 @@ function useFetchAllProducts() {
 }
 
 export default function App() {
+  const [cart, setCart] = useState([]);
+
   return (
     <>
       <ProductsContext value={useFetchAllProducts}>
-        <Navbar />
-        <Outlet />
+        <CartContext value={{ cart, setCart }}>
+          <Navbar />
+          <Outlet />
+        </CartContext>
       </ProductsContext>
     </>
   );

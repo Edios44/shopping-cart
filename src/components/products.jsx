@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 import Card from "./card";
 import { useContext } from "react";
-import { ProductsContext } from "../App";
+import { ProductsContext, CartContext } from "../App";
 
 export default function Products({ className, ulRef }) {
   const useCards = useContext(ProductsContext);
   const cards = useCards();
-  console.log(cards);
+
   return (
     <ul className={className} ref={ulRef}>
       {cards.map((card) => (
