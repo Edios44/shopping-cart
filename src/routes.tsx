@@ -1,21 +1,28 @@
 import CartPage from "./cartPage";
-import HomePage from "./homePage";
+import App from "./App";
 import ShopPage from "./shopPage";
 import ErrorPage from "./errorPage";
+import HomePage from "./homePage";
 
 const routes = [
   {
     path: "/",
-    element: <HomePage />,
+    element: <App />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "cart",
-    element: <CartPage />,
-  },
-  {
-    path: "shop",
-    element: <ShopPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
+      },
+      {
+        path: "shop",
+        element: <ShopPage />,
+      },
+    ],
   },
 ];
 
