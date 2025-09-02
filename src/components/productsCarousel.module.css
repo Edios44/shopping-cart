@@ -1,5 +1,7 @@
 .container {
     display: flex;
+    align-items: center;
+    margin: 2em 0;
 }
 .carousel {
     display: flex;
@@ -7,4 +9,12 @@
     overflow-x: scroll;
     scrollbar-width: none;
     scroll-behavior: smooth;
+}
+.button {
+    height: 3em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }

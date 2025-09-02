@@ -3,14 +3,14 @@ import Card from "./card";
 import { useContext } from "react";
 import { ProductsContext, CartContext } from "../App";
 
-export default function Products({ className, ulRef }) {
+export default function Products({ ulClassName, liClassName, ulRef }) {
   const useCards = useContext(ProductsContext);
   const cards = useCards();
 
   return (
-    <ul className={className} ref={ulRef}>
+    <ul className={ulClassName} ref={ulRef}>
       {cards.map((card) => (
-        <li>
+        <li className={liClassName}>
           <Card product={card} />
         </li>
       ))}

@@ -1,0 +1,30 @@
+.container {
+    width: 200px;
+    border: 1.5px solid;
+    border-radius: 0.25em;
+    margin-inline: 0.5em;
+    padding: 1em;
+}
+.img {
+    object-fit: contain;
+    width: 150px;
+    height: 200px;
+}
+.title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.inputContainer {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+}
+.input {
+    width: 150px;
+    margin-inline: 1em;
+}
+.button {
+    display: flex;
+    justify-content: flex-end;
+}

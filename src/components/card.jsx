@@ -1,5 +1,7 @@
 import { useContext, useRef } from "react";
 import { CartContext } from "../App";
+import classes from "./card.module.css";
+import Button from "./button";
 
 export default function Card({ product }) {
   const cartState = useContext(CartContext);
@@ -11,12 +13,11 @@ export default function Card({ product }) {
   }
   return (
     <>
-      <div>
-        <img src={product.image} alt={product.title} />
-        <h3>{product.title}</h3>
+      <div className={classes.container}>
+        <img src={product.image} alt={product.title} className={classes.img} />
+        <h3 className={classes.title}>{product.title}</h3>
         <div>{product.price}$</div>
-        <button onClick={() => addCartItem(product, qtRef)}>Add to cart</button>
-        <div>
+        <div className={classes.inputContainer}>
           <label htmlFor="quantity">Qt.</label>
           <input
             type="number"
@@ -24,6 +25,14 @@ export default function Card({ product }) {
             ref={qtRef}
             min={1}
             defaultValue={1}
+            className={classes.input}
+          />
+        </div>
+        <div className={classes.button}>
+          <Button
+            style={"primary"}
+            handler={() => addCartItem(product, qtRef)}
+            content={"Add to cart"}
           />
         </div>
       </div>

@@ -13,9 +13,19 @@ export default function ProductsCarousel() {
   }
   return (
     <div className={classes.container}>
-      <button onClick={(e) => scrollCarousel("prev")}>Previous</button>
-      <Products className={classes.carousel} ulRef={ulRef} />
-      <button onClick={(e) => scrollCarousel("next")}>Next</button>
+      <button
+        onClick={(e) => scrollCarousel("prev")}
+        className={classes.button}
+      >
+        {"<<"}
+      </button>
+      <Products ulClassName={classes.carousel} ulRef={ulRef} />
+      <button
+        onClick={(e) => scrollCarousel("next")}
+        className={classes.button}
+      >
+        {">>"}
+      </button>
     </div>
   );
 }

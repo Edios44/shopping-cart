@@ -1,0 +1,23 @@
+.header {
+    background-image: url("./assets/shopping-banner.jpg");
+    height: 37em;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+.container {
+    margin: 4em 8em;
+    grid-row: 2/3;
+}
+.title {
+    margin: 2em;
+    grid-column: 1/2;
+}
+
+.latestProducts {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+}
